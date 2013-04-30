@@ -1,0 +1,7 @@
+Overview
+
+We build:
+
+    Agent-Based simulations of social systems and business processes
+    Multiagent algorithms for distributed coordination and distributed resource allocation
+    Web applications
