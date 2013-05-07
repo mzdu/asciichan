@@ -28,6 +28,8 @@
 	<div>{{art.title}}</div>
 	<pre>{{art.art}}</pre>
 	<div>{{art.created}}</div>
+	{% for keyword in keywords %}
+	<div>{{art.keyword}}<div>
 {% endfor %}
 
 </body>
