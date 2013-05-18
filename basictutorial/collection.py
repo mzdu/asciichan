@@ -40,7 +40,9 @@ def ask_ok(prompt, retries=4, complaint='Yes or no, please!'):
 
 #  Default Arguments attention
 """
-Important warning: The default value is evaluated only once. This makes a difference when the default is a mutable object such as a list, dictionary, or instances of most classes.
+Important warning: The default value is evaluated only once. 
+This makes a difference when the default is a mutable object 
+    such as a list, dictionary, or instances of most classes.
 """
 def f(a, L=[]):
     L.append(a)
