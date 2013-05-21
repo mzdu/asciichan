@@ -149,4 +149,4 @@ a = [0,1,2,3]
 for i in a:
     open('/test2.txt','a').write(str(i))
 
-
+#add test
