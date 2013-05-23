@@ -168,4 +168,4 @@ except:
 
 # 1. how to use generator
 # 2. what is a yield
-    
+# Pay extra attention on this.
