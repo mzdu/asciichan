@@ -1,18 +1,20 @@
 # Starts from Chapter 6 Modules
 
 
-def tempfunc():
-    # fib and fib2 can only be ran inside of tempfunc()
-    from fibo import fib, fib2
-    fib(1000)
-    print fib2(1000)
-    
-    # import fibo
-    # fibo.fib(1000)
-    
-    print 'hello'
-
-tempfunc()
+#===============================================================================
+# def tempfunc():
+#    # fib and fib2 can only be ran inside of tempfunc()
+#    from fibo import fib, fib2
+#    fib(1000)
+#    print fib2(1000)
+#    
+#    # import fibo
+#    # fibo.fib(1000)
+#    
+#    print 'hello'
+# 
+# tempfunc()
+#===============================================================================
 
 #===============================================================================
 # When you run a Python module with
@@ -146,7 +148,12 @@ rb, wb, r+b look up above explanations
 
 a = [0,1,2,3]
 
-for i in a:
-    open('/test2.txt','a').write(str(i))
+#for i in a:
+#    open('/test2.txt','a').write(str(i))
+
+
+    
+    
+
 
 #add test
