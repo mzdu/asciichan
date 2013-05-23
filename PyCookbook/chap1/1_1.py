@@ -8,3 +8,15 @@ def process1(str1):
 
 str2 = 'this is a string.'
 process1(str2)
+
+
+print '====================='
+
+list2 = [letter for letter in str2]
+print list2
+
+print '====================='
+
+# map(func, list) apply func on every element in list
+list3 = map(str, str2)
+print list3
