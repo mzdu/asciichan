@@ -3,9 +3,9 @@
 
 def tempfunc():
     # fib and fib2 can only be ran inside of tempfunc()
-    from fibo import fib, fib2
-    fib(1000)
-    print fib2(1000)
+#     from fibo import fib, fib2
+#     fib(1000)
+#     print fib2(1000)
     
     # import fibo
     # fibo.fib(1000)
@@ -142,11 +142,43 @@ rb, wb, r+b look up above explanations
 # this sentence will be written on the first line of file.
 # You need to use for line in f: to control the location of cursor
 
+
+# Only write with string
 # f.write('this is an additional line \n')
 
 a = [0,1,2,3]
 
 for i in a:
     open('/test2.txt','a').write(str(i))
+    # the cursor which indicates the position inside of this file is moving too.
+    # no matter how many open() you run.
 
+q= open('/test2.txt', 'r+')
+print q.read()
+
+# tell the position of internal cursor
+print q.tell()
+
+# Move the cursor back to 1
+q.seek(1)
+print q.tell()
 #add test
+q.seek(3,2)
+print q.read()
+print q.tell()
+print q.read()
+q.close()
+#f.close() to close it and free up any system resources taken up by the open file.
+
+with open('/test2.txt', 'r') as f:
+    read_data = f.read()
+f.closed
+
+
+# try and catch
+while True:
+    try:
+        x = int(raw_input("Please enter a number: "))
+        break
+    except ValueError:
+        print "Oops!  That was no valid number.  Try again..."
