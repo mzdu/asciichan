@@ -12,6 +12,7 @@ class Stack:
         
     def peek(self):
 #        return self.items[len(self.items)-1]
+# Reverse index runs faster than loading len()
         return self.items[-1]
     
     def isEmpty(self):
@@ -24,8 +25,3 @@ class Stack:
     def size(self):
         return len(self.items)
     
-
-st1 = Stack()
-st1.push('12')
-st1.push('a')
-print st1.peek()
