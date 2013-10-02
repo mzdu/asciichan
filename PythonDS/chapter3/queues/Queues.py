@@ -5,6 +5,7 @@ class Queue():
         self.items = []
     
     def enqueue(self,item):
+        # Please reference insertVSconcatenate.py
 #        self.items = [item] + self.items
         self.items.insert(0,item)
         
@@ -19,9 +20,9 @@ class Queue():
     
     
     
-testQ = Queue()
-testQ.enqueue(12)
-testQ.enqueue(23)
-print testQ.dequeue()
-print testQ.isEmpty()
-print testQ.size()
+#testQ = Queue()
+#testQ.enqueue(12)
+#testQ.enqueue(23)
+#print testQ.dequeue()
+#print testQ.isEmpty()
+#print testQ.size()
