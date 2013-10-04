@@ -1,6 +1,6 @@
 __author__ = "MingzheDu"
 
-class Queue():
+class Queue:
     def __init__(self):
         self.items = []
     
