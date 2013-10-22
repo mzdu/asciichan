@@ -1,5 +1,9 @@
 # Learn timeit Module with Timer class
 # Very good example to see the difference these ways to create a list.
+
+# Conclusion: 
+# 1. String concatenation is a fairly slow way to combine elements together. Not Recommended!
+
 from timeit import Timer
 def test1():
     l = []
