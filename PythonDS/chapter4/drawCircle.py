@@ -6,7 +6,7 @@ myWin = turtle.Screen()
 def drawCircle(myTurtle,radius):
     if radius > 0:
         myTurtle.forward(1)
-        myTurtle.right(2)
+        myTurtle.right(1)
         
         drawCircle(myTurtle,radius-1)
         
