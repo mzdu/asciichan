@@ -1,17 +1,35 @@
-import turtle
+class dx:
+    dxx = 0
+    
+    def __init__(self,name):
+        self.name = name
+        print name,'is already!'
+        dx.dxx += 1
+        
+    def __del__(self):
+        print self.name,'will be delete!'
+        dx.dxx -= 1
+        if dx.dxx == 0:
+            print 'bye~'
+        else:
+            print '%d left' % dx.dxx
+            
+    def hi(self):
+        print 'my name',self.name
+    def many(self):
+        if dx.dxx == 1:
+            print 'only one'
+        else:
+            print 'we have %d' % dx.dxx
 
-myTurtle = turtle.Turtle()
-myWin = turtle.Screen()
+dt = dx('test')
+dt.hi()
+dt.many()
 
-def drawSth(t):
-    t.forward(20)
+x = dx('text')
+x.hi()
+x.many()
 
-def drawSpiral(myTurtle, lineLen):
-    myTurtle.left(90)
-    myTurtle.up()
-    myTurtle.backward(100)
-    myTurtle.color("green")
-    drawSth(myTurtle)
+dt.hi()
+dt.many()
 
-drawSpiral(myTurtle,100)
-myWin.exitonclick()
