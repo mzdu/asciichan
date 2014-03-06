@@ -1,0 +1,59 @@
+<html>
+<head>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script> 
+<script>
+$(function(){
+	$('#clickme').click(function(){
+		$.getJSON("data2.json", function(obj){
+			$.each(obj, function(key, value){
+				$("ul").append("<li>" + value.name + "</li>");
+			}  );
+			
+		});
+		
+		
+			
+		/*
+			$.ajax({
+				url: 'data2.json',
+				dataType = 'json',
+				
+				success: function(data){
+					var items = [];
+					
+					$.each(data, function(key, val){
+						items.push('<li id="' + key + '">' + val + '</li>');
+					});
+					
+					$('<ul>',{
+						'class': 'interest-list',
+						html: items.join('')
+					}).appendTo('body');
+				},
+				
+				statusCode: {
+					404: function(){
+						alert('file not found');
+					}
+				}
+				
+			});
+		*/
+		});
+	
+	
+	
+});
+</script>
+
+</head>
+<body>
+<a href="#" id="clickme">Get JSON Data</a>
+</body>
+
+
+
+</html>
+
+
+

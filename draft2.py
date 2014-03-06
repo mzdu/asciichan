@@ -1,35 +1,18 @@
-class dx:
-    dxx = 0
-    
-    def __init__(self,name):
-        self.name = name
-        print name,'is already!'
-        dx.dxx += 1
-        
-    def __del__(self):
-        print self.name,'will be delete!'
-        dx.dxx -= 1
-        if dx.dxx == 0:
-            print 'bye~'
-        else:
-            print '%d left' % dx.dxx
-            
-    def hi(self):
-        print 'my name',self.name
-    def many(self):
-        if dx.dxx == 1:
-            print 'only one'
-        else:
-            print 'we have %d' % dx.dxx
+"""
+parse JSON string in Python
+"""
+import json
 
-dt = dx('test')
-dt.hi()
-dt.many()
+json_input = '{ "one": 1, "two": { "list": [ {"item":"A"},{"item":"B"} ] } }'
 
-x = dx('text')
-x.hi()
-x.many()
+try:
+    decoded = json.loads(json_input)
 
-dt.hi()
-dt.many()
+    # pretty printing of json-formatted string
+    print json.dumps(decoded, sort_keys=True, indent=4)
 
+    print "JSON parsing example: ", decoded['one']
+    print "Complex JSON parsing example: ", decoded['two']['list'][1]['item']
+
+except (ValueError, KeyError, TypeError):
+    print "JSON format error"
