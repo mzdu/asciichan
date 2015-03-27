@@ -10,7 +10,14 @@
 	<script>
 		// d3.csv
 		// attr() src href are attr()
-		var dataArray = [20, 40, 50];
+		var dataArray = [20, 40, 50, 600];
+		var width = 500;
+		var height = 500;
+		
+		var widthScale = d3.scale.linear()
+						.domain([0, 60])
+						.range([0, width]);
+		
 		
 		var canvas = d3.select("body")
 						.append("svg")
@@ -24,7 +31,7 @@
 					.data(dataArray)
 					.enter()
 						.append("rect")
-						.attr("width", function(d){return d * 10})
+						.attr("width", function(d){return widthScale(d)})
 						.attr("height", 50)
 						.attr("y", function(d, i){return i * 100});
 	</script>
