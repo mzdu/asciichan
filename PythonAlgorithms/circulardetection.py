@@ -32,3 +32,12 @@ def dfs_visit(g, v, results, parent = None):
     results.finish_time[v] = results.t
     results.order.append(v)
     
+
+# use adjacency list 
+# in Python we use dict to represent Graph
+# What is the key? the vertices
+# What are the values? 'A':['B', 'G']
+
+# graph1 = {"A":["B","G"], "B":["C"], "C":["A"], "G":["C"]}
+graph2 = {"A":["B"], "B":["C"], "C":["A"]}
+
