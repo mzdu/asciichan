@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+</head>
+<body>
+<div id="jquery-script-menu">
+
+<div class="container">
+
+
+<h2> Example with callback: <span id="rating-2" data-stars="2"></span></h2>
+
+<!-- Jquery -->
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<!-- Jquery Rate Picker-->
+<script type="text/javascript" src="js/jquery-rate-picker.js"></script>
+
+<script>
+
+    $.ratePicker("#rating-2", {
+        rate : function (stars){
+            alert('Sample 3\'s Rate is ' + stars);
+        }
+    });
+
+</script>
+</div>
+</body>
+</html>
