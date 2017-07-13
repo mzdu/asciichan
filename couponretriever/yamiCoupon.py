@@ -8,7 +8,7 @@ def analyzeURL(url1):
     webpage = urllib2.urlopen(req)
     pageContent = webpage.read()
     
-    soup = BeautifulSoup(pageContent)
+    soup = BeautifulSoup(pageContent, "lxml")
     
     searchBar = soup.findAll('input', {'name':'keywords'})
     
@@ -21,18 +21,19 @@ def analyzeURL(url1):
 if __name__ == "__main__":    
     # call yamibuy website and retrieve coupon related information
     couponPool = set()
-    repCounter = 1
+    repCounter = 20
+    prevLen = -1
     
-    while True:
+    while True and repCounter > 0:
+        prevLen = len(couponPool)
         couponInfo = analyzeURL(targetUrl) 
-        
-        if couponInfo not in couponPool:
-            couponPool.add(couponInfo)
-        else:
+        # print couponInfo
+        couponPool.add(couponInfo)
+        if len(couponPool) == prevLen:
             repCounter -= 1
-            if repCounter == 0:
-                break
-        print couponInfo
         
         
-    print couponPool
+    print "found " + str(len(couponPool)) + " coupons."
+    print "========Coupons========"
+    print '\n'.join(couponPool)
+    print "======================="
