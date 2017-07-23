@@ -18,8 +18,11 @@ def cosine_similarity2(v1,v2):
     if not magnitude:
         return 0
     return dotProduct / magnitude
-        
-        
+    
+def jaccard_similarity(query, document):
+    intersection = set(query).intersection(set(document))
+    union = set(query).union(set(document))
+    return len(intersection)/len(union)
 
 # s1, s2, s3 are in lexicon
 s1 = "the process by which some nations enrich themselves through political and economic control of other nations"
@@ -120,8 +123,9 @@ print(vectorSpace)
 # calculate the cosine distance
 i = 0
 while i < 6:
-    print("similarity result: sentence", i+1)
-    print(cosine_similarity(vectorSpace[i], vectorSpace[6]))
+    print("cosine similarity result: sentence", i+1)
     print(cosine_similarity2(vectorSpace[i], vectorSpace[6]))
+    print("jaccard similarity result: sentence", i+1)
+    print(jaccard_similarity(vectorSpace[i], vectorSpace[6]))
     # problem: what if we encounter out of vocabulary situation?
     i += 1
