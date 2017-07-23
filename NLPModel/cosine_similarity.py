@@ -1,5 +1,6 @@
 from __future__ import print_function
 import math
+
 def cosine_similarity(v1,v2):
     "compute cosine similarity of v1 to v2: (v1 dot v2)/{||v1||*||v2||)"
     sumxx, sumxy, sumyy = 0, 0, 0
@@ -9,15 +10,30 @@ def cosine_similarity(v1,v2):
         sumyy += y*y
         sumxy += x*y
     return sumxy/math.sqrt(sumxx*sumyy)
+    
+def cosine_similarity2(v1,v2):
+    "a better expression to deal with vectors length different case"
+    dotProduct = sum(a*b for a, b in zip(v1, v2))
+    magnitude = math.sqrt(sum(a*a for a in v1)) * math.sqrt(sum(b*b for b in v2))
+    if not magnitude:
+        return 0
+    return dotProduct / magnitude
+        
+        
 
 # s1, s2, s3 are in lexicon
 s1 = "the process by which some nations enrich themselves through political and economic control of other nations"
 s2 = "the process by which one nation takes over another nation, usually for the purpose of exploiting its labor and natural resources"
 s3 = "a patriarchal culture in which male violence and rape are tolerated"
+
 s4 = "the part of the economy that draws raw materials from the natural environment"
-s5 = "a social culture that provides an environment conducive to rape"
-s6 = "the ways in which people construct their sexual identity, attraction, and relationships, including the norms governing sexual behavior"
+
+
 # target
+s5 = "a social culture that provides an environment conducive to rape"
+
+s6 = "the ways in which people construct their sexual identity, attraction, and relationships, including the norms governing sexual behavior"
+
 s7 = "the ways in which people think about, and behave toward, themselves and others as sexual beings"
 
 
@@ -103,17 +119,9 @@ print(vectorSpace)
     
 # calculate the cosine distance
 i = 0
-resScore = -1
-resIdx = 0
-
-while i < len(lexicon) - 1:
-    score = cosine_similarity(vectorSpace[i], vectorSpace[6])
-    if score >= resScore:
-        resIdx = i
-        resScore = score
+while i < 6:
+    print("similarity result: sentence", i+1)
+    print(cosine_similarity(vectorSpace[i], vectorSpace[6]))
+    print(cosine_similarity2(vectorSpace[i], vectorSpace[6]))
     # problem: what if we encounter out of vocabulary situation?
     i += 1
-
-print("The best match found, and the score is", resScore)
-print("Input sentence: ", lexicon[-1])
-print("Best match is: ", lexicon[resIdx]) 
